@@ -1,6 +1,9 @@
 import { BlitzConfig, sessionMiddleware, simpleRolesIsAuthorized } from "blitz"
 
 const config: BlitzConfig = {
+  customServer: {
+    hotReload: true,
+  },
   middleware: [
     sessionMiddleware({
       cookiePrefix: "slothie-cms",

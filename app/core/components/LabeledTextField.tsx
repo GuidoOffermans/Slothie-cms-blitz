@@ -1,4 +1,4 @@
-import { forwardRef, ComponentPropsWithoutRef, PropsWithoutRef } from "react"
+import { ComponentPropsWithoutRef, forwardRef, PropsWithoutRef } from "react"
 import { useField, UseFieldConfig } from "react-final-form"
 
 export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
@@ -31,33 +31,22 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
 
     return (
       <div {...outerProps}>
-        <label {...labelProps}>
+        <label {...labelProps} className="block text-sm font-medium text-gray-700">
           {label}
-          <input {...input} disabled={submitting} {...props} ref={ref} />
         </label>
+        <input
+          {...input}
+          disabled={submitting}
+          {...props}
+          ref={ref}
+          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        />
 
         {touched && normalizedError && (
           <div role="alert" style={{ color: "red" }}>
             {normalizedError}
           </div>
         )}
-
-        <style jsx>{`
-          label {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            font-size: 1rem;
-          }
-          input {
-            font-size: 1rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            border: 1px solid purple;
-            appearance: none;
-            margin-top: 0.5rem;
-          }
-        `}</style>
       </div>
     )
   }
