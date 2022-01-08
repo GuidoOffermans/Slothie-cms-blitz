@@ -4,15 +4,15 @@ import { useState } from "react"
 import NavbarModal from "../components/NavbarModal"
 import AdminSidebar from "../components/AdminSidebar"
 import NavHamburgerButton from "../components/NavHamburgerButton"
-import AdminProfile from "../components/AdminProfile"
+import AdminSidebarItems from "../components/AdminSidebarItems"
 
 const AdminLayout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const user = {
     userName: "Guido Offermans",
-    userImage:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    image:
+      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   }
 
   return (
@@ -24,15 +24,13 @@ const AdminLayout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
 
       <div>
         <NavbarModal sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
-          <AdminProfile user={user} />
+          <AdminSidebarItems user={user} />
         </NavbarModal>
 
         {/* Static sidebar for desktop */}
-        <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
-          <AdminSidebar>
-            <AdminProfile user={user} />
-          </AdminSidebar>
-        </div>
+        <AdminSidebar>
+          <AdminSidebarItems user={user} />
+        </AdminSidebar>
 
         <div className="md:pl-64 flex flex-col flex-1">
           <div className="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-white">

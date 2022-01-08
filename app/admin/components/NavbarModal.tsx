@@ -1,8 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react"
 import { Fragment } from "react"
 import { XIcon } from "@heroicons/react/outline"
-import NavLogo from "./NavLogo"
-import AdminNav from "./AdminNav"
 
 const NavbarModal = ({ sidebarOpen, setSidebarOpen, children }) => {
   return (
@@ -49,11 +47,6 @@ const NavbarModal = ({ sidebarOpen, setSidebarOpen, children }) => {
                 </button>
               </div>
             </Transition.Child>
-
-            <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-              <NavLogo />
-              <AdminNav />
-            </div>
 
             {children}
           </div>
