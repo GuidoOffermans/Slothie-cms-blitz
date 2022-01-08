@@ -8,8 +8,7 @@ const AdminLayout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
         <title>{title || "slothie-cms-admin"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {children}
+      <AdminDashboard>{children}</AdminDashboard>
     </>
   )
 }

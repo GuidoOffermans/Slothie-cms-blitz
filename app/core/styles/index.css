@@ -2,18 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .hero {
-    @apply w-full text-[#333];
-  }
+html {
+  @apply h-full;
 }
 
-.title {
-  @apply m-0 w-full pt-20;
-  font-size: 48px;
-}
-
-.title,
-.description {
-  @apply text-center;
+body {
+  @apply h-full;
 }
