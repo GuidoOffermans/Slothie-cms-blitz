@@ -43,7 +43,7 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
         />
 
         {touched && normalizedError && (
-          <div role="alert" style={{ color: "red" }}>
+          <div role="alert" className="text-sm text-red-700">
             {normalizedError}
           </div>
         )}
