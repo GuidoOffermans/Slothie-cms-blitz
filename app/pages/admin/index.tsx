@@ -1,18 +1,11 @@
 import { BlitzPage } from "blitz"
-
-import Layout from "app/core/layouts/Layout"
+import AdminLayout from "../../admin/layouts/AdminLayout"
 
 const Admin: BlitzPage = () => {
-  return (
-    <div className="container">
-      <main>
-        <h2>Admin Page</h2>
-      </main>
-    </div>
-  )
+  return <h2>Admin Page</h2>
 }
 
 Admin.suppressFirstRenderFlicker = true
-Admin.getLayout = (page) => <Layout title="Admin">{page}</Layout>
+Admin.getLayout = (page) => <AdminLayout title="Admin">{page}</AdminLayout>
 
 export default Admin
