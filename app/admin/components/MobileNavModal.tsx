@@ -18,7 +18,7 @@ const MobileNavModal = ({ mobileMenuOpen, setMobileMenuOpen, user }) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+          <Dialog.Overlay className="fixed inset-0 bg-stone-600 bg-opacity-75" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -54,7 +54,7 @@ const MobileNavModal = ({ mobileMenuOpen, setMobileMenuOpen, user }) => {
               <div className="flex-shrink-0 flex items-center px-4">
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=stone"
                   alt="Workflow"
                 />
               </div>
@@ -63,11 +63,11 @@ const MobileNavModal = ({ mobileMenuOpen, setMobileMenuOpen, user }) => {
                   {navigation.map((item) => (
                     <Link key={item.name} href={item.href}>
                       <a
-                        className="group p-2 rounded-md flex items-center text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                        className="group p-2 rounded-md flex items-center text-base font-medium text-stone-800 hover:bg-stone-50 hover:text-stone-900"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <item.icon
-                          className="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                          className="mr-4 h-6 w-6 text-stone-500 group-hover:text-stone-700"
                           aria-hidden="true"
                         />
                         {item.name}
@@ -77,17 +77,17 @@ const MobileNavModal = ({ mobileMenuOpen, setMobileMenuOpen, user }) => {
                 </div>
               </nav>
             </div>
-            <div className="flex-shrink-0 flex border-t border-gray-200 p-4">
+            <div className="flex-shrink-0 flex border-t border-stone-200 p-4 hover:bg-stone-50">
               <a href="#" className="flex-shrink-0 group block">
                 <div className="flex items-center">
                   <div>
                     <img className="inline-block h-10 w-10 rounded-full" src={user.image} alt="" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-base font-medium text-gray-700 group-hover:text-gray-900">
+                    <p className="text-base font-medium text-stone-700 group-hover:text-stone-900">
                       {user.name}
                     </p>
-                    <p className="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+                    <p className="text-sm font-medium text-stone-500 group-hover:text-stone-700">
                       Account Settings
                     </p>
                   </div>

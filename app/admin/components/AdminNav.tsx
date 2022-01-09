@@ -8,12 +8,14 @@ const ActiveLink = ({ href, item }) => {
 
   const activeLinkClass =
     router.pathname === href.pathname
-      ? "bg-gray-200 text-gray-900"
-      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+      ? "bg-stone-300 text-stone-900"
+      : "text-stone-600 hover:bg-stone-200 hover:text-stone"
   const linkClassName = `group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium ${activeLinkClass}`
 
   const activeIconClass =
-    router.pathname === href.pathname ? "text-gray-700" : "text-gray-400 group-hover:text-gray-500"
+    router.pathname === href.pathname
+      ? "text-stone-700"
+      : "text-stone-400 group-hover:text-stone-500"
   const iconClassName = `h-6 w-6 ${activeIconClass}`
 
   return (
