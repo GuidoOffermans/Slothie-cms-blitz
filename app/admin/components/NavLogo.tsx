@@ -1,9 +1,9 @@
 const NavLogo = () => {
   return (
-    <div className="flex-shrink-0 flex items-center px-4">
+    <div className="bg-white py-4 flex items-center justify-center">
       <img
         className="h-8 w-auto"
-        src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=grey"
         alt="Workflow"
       />
     </div>

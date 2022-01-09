@@ -1,8 +1,18 @@
-const AdminSidebar = ({ children }) => {
+import NavLogo from "./NavLogo"
+import AdminNav from "./AdminNav"
+import AdminProfile from "./AdminProfile"
+
+const AdminSidebar = ({ user }) => {
   return (
-    <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
-      <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white">
-        {children}
+    <div className="hidden lg:flex lg:flex-shrink-0">
+      <div className="flex flex-col w-20">
+        <div className="flex-1 flex flex-col min-h-0 overflow-y-auto bg-white">
+          <div className="flex-1">
+            <NavLogo />
+            <AdminNav />
+          </div>
+          <AdminProfile user={user} />
+        </div>
       </div>
     </div>
   )

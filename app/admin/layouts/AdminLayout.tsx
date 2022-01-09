@@ -1,13 +1,14 @@
 import { BlitzLayout, Head, Routes } from "blitz"
 import { useState } from "react"
 
-import NavbarModal from "../components/NavbarModal"
+import MobileNavModal from "../components/MobileNavModal"
 import AdminSidebar from "../components/AdminSidebar"
-import NavHamburgerButton from "../components/NavHamburgerButton"
-import AdminSidebarItems from "../components/AdminSidebarItems"
+import MobileTopNav from "../components/MobileTopNav"
+import MainSection from "../components/MainSection"
+import AsideSection from "../components/AsideSection"
 
 const AdminLayout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const user = {
     userName: "Guido Offermans",
@@ -22,30 +23,20 @@ const AdminLayout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <NavbarModal sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
-          <AdminSidebarItems user={user} />
-        </NavbarModal>
+      <div className="h-full flex">
+        <MobileNavModal
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}
+          user={user}
+        />
+        <AdminSidebar user={user} />
 
-        {/* Static sidebar for desktop */}
-        <AdminSidebar>
-          <AdminSidebarItems user={user} />
-        </AdminSidebar>
+        <div className="flex-1 min-w-0 flex flex-col overflow-hidden">
+          <MobileTopNav setMobileMenuOpen={setMobileMenuOpen} />
 
-        <div className="md:pl-64 flex flex-col flex-1">
-          <div className="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-white">
-            <NavHamburgerButton onclick={() => setSidebarOpen(true)} srText="Open sidebar" />
-          </div>
-
-          <main className="flex-1">
-            <div className="py-6">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">{title}</h1>
-              </div>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                <div className="py-4">{children}</div>
-              </div>
-            </div>
+          <main className="flex-1 flex overflow-hidden">
+            <MainSection>{children}</MainSection>
+            <AsideSection />
           </main>
         </div>
       </div>
