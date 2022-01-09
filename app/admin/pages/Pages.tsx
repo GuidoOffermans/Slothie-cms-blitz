@@ -1,9 +1,10 @@
 import { BlitzPage } from "blitz"
 
 import AdminLayout from "../../admin/layouts/AdminLayout"
+import ActionHeader from "../components/headings/ActionHeader"
 
 const ManagePages: BlitzPage = () => {
-  return <h2>Pages Page</h2>
+  return <ActionHeader title={"test"} actionName={"click"} />
 }
 
 ManagePages.suppressFirstRenderFlicker = true
