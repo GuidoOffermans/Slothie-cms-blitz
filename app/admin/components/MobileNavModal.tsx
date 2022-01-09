@@ -62,7 +62,10 @@ const MobileNavModal = ({ mobileMenuOpen, setMobileMenuOpen, user }) => {
                 <div className="px-2 space-y-1">
                   {navigation.map((item) => (
                     <Link key={item.name} href={item.href}>
-                      <a className="group p-2 rounded-md flex items-center text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                      <a
+                        className="group p-2 rounded-md flex items-center text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
                         <item.icon
                           className="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                           aria-hidden="true"
