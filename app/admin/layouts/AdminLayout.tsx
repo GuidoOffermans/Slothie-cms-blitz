@@ -35,8 +35,8 @@ const AdminLayout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
           <MobileTopNav setMobileMenuOpen={setMobileMenuOpen} />
 
           <main className="flex-1 flex overflow-hidden">
-            <MainSection>{children}</MainSection>
             <AsideSection />
+            <MainSection>{children}</MainSection>
           </main>
         </div>
       </div>

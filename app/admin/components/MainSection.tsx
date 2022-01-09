@@ -2,7 +2,7 @@ const MainSection = ({ children }) => {
   return (
     <section
       aria-labelledby="primary-heading"
-      className="min-w-0 flex-1 h-full flex flex-col overflow-y-auto lg:order-last"
+      className="min-w-0 flex-1 h-full flex flex-col overflow-y-auto"
     >
       <h1 id="primary-heading" className="sr-only">
         Account
